@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Live Chat Support</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Live Chat Support</h1>
+
+    <div id="message1" aria-live="assertive"></div>
+  
+    <div class="chat chat--other" tabindex="0">
+   	  <b>Mary</b>: Have you tried turning it on and off again? 
+    </div>
+
+    <div class="chat chat--you" tabindex="0">
+      <b>Andrew</b>: Yes. I have, do you think I'm an idiot? 
+    </div>
+
+    <div class="chat chat--other" tabindex="0">
+      <b>Mary</b>: Well, if the shoe fits. 
+    </div>
+
+    <div class="chat chat--you" tabindex="0">
+      <b>Andrew</b>: Now you're just being rude
+    </div>
+
+    <div id="message3" aria-live="off"></div>
+
+    <div id="message4" aria-live="off"></div>
+
+    <div id="message2" aria-live="assertive"></div>
+
+    <form action="#">
+      <label for="chat1">Add your message here</label>
+      <textarea name="chat1" id="chat1"></textarea>
+      <button class="button">Submit</button>
+    </form>
+
+<script type="text/javascript">
+(function()
+{
+
+  window.setTimeout(function()
+  {
+  
+    document.getElementById('message2').innerHTML = '<div class="chat chat--other" tabindex="0">Mary is typing...</div>';
+  
+  }, 20000);
+
+  window.setTimeout(function()
+  {
+  
+    document.getElementById('message2').innerHTML = '';
+  
+  }, 25000);
+
+
+  window.setTimeout(function()
+  {
+  
+    document.getElementById('message1').innerHTML = 'There is a new message from Mary';
+  
+  }, 25000);
+
+  window.setTimeout(function()
+  {
+  
+    document.getElementById('message3').innerHTML = '<div class="chat chat--other" tabindex="0"><b>Mary</b>: I dont get paid enough to be nice.</div>';
+  
+  }, 25000);
+
+  window.setTimeout(function()
+  {
+  
+    document.getElementById('message4').innerHTML = '<div class="chat chat--you chat--progress" tabindex="0"><i>Andrew is typing...</i></div>';
+  
+  }, 30000);
+
+  window.setTimeout(function()
+  {
+  
+    document.getElementById('message1').innerHTML = 'Your message has been added';
+  
+  }, 35000);
+
+  window.setTimeout(function()
+  {
+  
+    document.getElementById('message4').innerHTML = '<div class="chat chat--you" tabindex="0"><b>Andrew</b>: Wow. You are the rudest support person ever!</div>';
+  
+  }, 35000);
+
+})();
+</script>
+  </body>
+</html>
